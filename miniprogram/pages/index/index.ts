@@ -2,28 +2,47 @@
 // 获取应用实例
 const app = getApp<IAppOption>()
 
+interface swiperList {
+  imageUrl:string,
+  type:string,
+  target:string
+}
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    swiperList:<swiperList[]>[
+      {
+        imageUrl:"https://www.mclarencars.cn/content/dam/mclaren-automotive/models/720s/720s-spider/sustainment-2021/images/720S_Spider_Front34_Static.jpg",
+        type:'url',
+        target:"https://www.mclarencars.cn/cn-zh/super-series/720s-spider"
+      },
+      {
+        imageUrl:"https://www.mclarencars.cn/content/dam/mclaren-automotive/models/720s/720s/sustainment-2021/images/360_revised.png",
+        type:'url',
+        target:"https://www.mclarencars.cn/cn-zh/super-series/720s"
+      },
+      {
+        imageUrl:"https://www.mclarencars.cn/content/dam/mclaren-automotive/models/720s/720s-spider/sustainment-2021/images/720S_Spider_Front34_Static.jpg",
+        type:'url',
+        target:"https://www.mclarencars.cn/cn-zh/super-series/720s-spider"
+      },
+      {
+        imageUrl:"https://www.mclarencars.cn/content/dam/mclaren-automotive/models/720s/720s/sustainment-2021/images/360_revised.png",
+        type:'url',
+        target:"https://www.mclarencars.cn/cn-zh/super-series/720s-spider"
+      }
+    ],
+    currentIndex:0
   },
+  onSwiperChange(e:any){
+    this.setData({
+      currentIndex:e.detail.current
+    })
+  },  
   // 事件处理函数
   bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs',
-    })
+    
   },
   onLoad() {
-    // @ts-ignore
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
   },
   getUserProfile() {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -36,14 +55,6 @@ Page({
           hasUserInfo: true
         })
       }
-    })
-  },
-  getUserInfo(e: any) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
-    console.log(e)
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })
