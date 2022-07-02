@@ -22,8 +22,8 @@
     ]
   },
   "include": [
-    "./**/*.ts"
-, "miniprogram/api/swiper.js"  ],
+    "./**/*.ts" 
+      ],
   "exclude": [
     "node_modules"
   ]
