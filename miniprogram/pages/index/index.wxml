@@ -1,9 +1,9 @@
 <!--index.wxml-->
 <view class="index">
-  <view class="swiper-container"> 
+  <view wx:if="{{swiperList.length > 0}}" class="swiper-container"> 
     <swiper circular="{{true}}" interval="{{3000}}" bindchange="onSwiperChange" autoplay="{{true}}">
       <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
-        <image mode="aspectFill" src="{{item.imageUrl}}"></image>
+        <image bindtap="handleSwiperItem" data-item="{{item}}" src="{{item.imgUrl}}"></image>
       </swiper-item>
     </swiper>
     <view class="dots">
