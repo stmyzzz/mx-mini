@@ -30,6 +30,6 @@
       <image src="../../assets/icons/薯片.png" />
       <view class="nums">88</view>
     </view>
-    <view class="login-btn" bindtap="handleLogin">授权登录</view>
+    <view wx:else class="login-btn" bindtap="handleLogin">授权登录</view>
   </view>
 </view>

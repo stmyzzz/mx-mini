@@ -39,11 +39,15 @@ Page({
     wx.getUserProfile({
       desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (userInfo:any) => {
-        console.log('userInfo',userInfo)
+        wx.setStorageSync('userInfo',userInfo)
         wx.cloud.callFunction({
           name: 'login',
-          complete: res => {
-            console.log('callFunction test result: ', res)
+          complete: (res:any) => {
+            console.log('callFunction test result: ', res.result.openid)
+            wx.setStorageSync('openid',res.result.openid)
+            wx.navigateBack({
+              delta:0
+            })
           }
         })
       }

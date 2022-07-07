@@ -1,6 +1,8 @@
 // app.ts
 App<IAppOption>({
-  globalData: {},
+  globalData: {
+    openid:wx.getStorageSync('openid') || ''
+  },
   onLaunch() {
     // 初始化云环境
     wx.cloud.init({

@@ -1,18 +1,21 @@
 // pages/me/index.ts
-Page({
+const app = getApp<IAppOption>()
+Page<IMeOption>({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isLogin:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-
+    this.setData({
+      isLogin:!!app.globalData.openid
+    })
   },
 
   /**

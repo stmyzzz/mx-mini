@@ -36,6 +36,9 @@ Page({
     })
   },
   onLoad() {
+    this.setData({
+      isLogin:app.globalData.openid
+    })
     swiper.list().then((res:any)=>{
       console.log('res',res);
       this.setData({
