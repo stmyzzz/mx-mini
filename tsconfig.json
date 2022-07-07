@@ -23,7 +23,7 @@
   },
   "include": [
     "./**/*.ts" 
-      ],
+, "miniprogram/components/progress-bar/index.js"      ],
   "exclude": [
     "node_modules"
   ]

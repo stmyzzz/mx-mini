@@ -1,0 +1,4 @@
+<!--components/progress-bar/index.wxml-->
+<view class="progress-bar" style="{{progressColor && 'background-color:'+ progressColor + ';'}} {{width && 'width:'+ width + ';'}}">
+  <view class="bar" style="{{value<=0 || 'width:'+ value + '%;'}} {{color && 'background-color:'+ color + ';'}}"></view>
+</view>

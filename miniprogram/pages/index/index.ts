@@ -8,7 +8,8 @@ const app = getApp<IAppOption>()
 interface swiperList {
   imageUrl:string,
   type:string,
-  target:string
+  target:string,
+  isLogin:false
 }
 Page({
   data: {
@@ -20,6 +21,12 @@ Page({
       currentIndex:e.detail.current
     })
   },  
+  handleLogin(){
+    wx.navigateTo({
+      url:'/pages/login/index'
+    })
+    
+  },
   handleSwiperItem(e:any){
      const {item} = e.currentTarget.dataset
     item.type === 'url' ? wx.navigateTo({

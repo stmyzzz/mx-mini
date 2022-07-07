@@ -5,15 +5,18 @@
     "pages/order/index",
     "pages/me/index",
     "pages/product/detail",
-    "pages/web-view/index"
+    "pages/web-view/index",
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "柠檬雪山",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "",
+    "selectedColor": "#E60012",
     "list": [
       {
         "pagePath": "pages/index/index",

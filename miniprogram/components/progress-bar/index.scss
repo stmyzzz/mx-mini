@@ -1,0 +1,13 @@
+/* components/progress-bar/index.wxss */
+.progress-bar{
+  background-color: #ebebeb;
+  height: 5rpx;
+  width: 100%;
+  border-radius: 3rpx;
+  overflow: hidden;
+  .bar{
+    background-color: #E60012;
+    height: 100%;
+    width: 0;
+  }
+}

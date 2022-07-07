@@ -1,0 +1,42 @@
+/* pages/login/index.wxss */
+@import '../../style/common.scss';
+.container{
+  padding-top: 176rpx;
+}
+.logo{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: hidden;
+  overflow: hidden;
+  margin-bottom: 22rpx;
+}
+.logo-title{
+  margin-bottom: 160rpx;
+}
+.intro{
+  font-size: 37rpx;
+  font-weight: bold;
+  margin-bottom: 84rpx;
+}
+
+.login-tip{
+  font-size: 22rpx;
+  margin-top: 14rpx;
+  color: #777777;
+  margin-bottom: 14rpx;
+}
+.login-btn{
+  width: 590rpx;
+  background-color: $primary-color;
+  color: #ffffff;
+  font-size: 33rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 42rpx;
+}
+
+.cancel{
+  color: #aaaaaa;
+}

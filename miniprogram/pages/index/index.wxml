@@ -1,5 +1,7 @@
 <!--index.wxml-->
-<view class="index">
+<view class="container">
+
+  <!-- 轮播图区域 -->
   <view wx:if="{{swiperList.length > 0}}" class="swiper-container"> 
     <swiper circular="{{true}}" interval="{{3000}}" bindchange="onSwiperChange" autoplay="{{true}}">
       <swiper-item wx:for="{{swiperList}}" wx:key="{{index}}">
@@ -12,5 +14,22 @@
         </view>
       </view>
     </view>
+  </view>
+
+  <!-- 会员、积分区域 -->
+  <view class="user-area">
+    <view class="vip-box">
+      <image src="../../assets/icons/汉堡.png" />
+      <view class="vip-info">
+        <view class="title">{{isLogin ? '微雪花会员' :'尊敬的用户'}}</view>
+        <progress-bar  wx:if="{{isLogin}}" value='{{90}}' width='320rpx'></progress-bar>
+        <view class="tips">{{isLogin ? '再升一级可享超级可乐' :'会员可享权益'}}</view>
+      </view>
+    </view>
+    <view wx:if="{{isLogin}}" class="icon-box">
+      <image src="../../assets/icons/薯片.png" />
+      <view class="nums">88</view>
+    </view>
+    <view class="login-btn" bindtap="handleLogin">授权登录</view>
   </view>
 </view>
